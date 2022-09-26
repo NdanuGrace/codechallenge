@@ -3,12 +3,12 @@ import React ,{useState}from "react";
 
 function AddTransactionForm({submit}) {
 
-   const[submittedData, setSubmittedData] = useState({
-    date:"",
-    description: "",
-    category:"",
-    amount: 0
-})
+//    const[submittedData, setSubmittedData] = useState({
+//     date:"",
+//     description: "",
+//     category:"",
+//     amount: 0
+// })
    const[data, setData] = useState ({
     date: "",
     description: "",
@@ -16,7 +16,7 @@ function AddTransactionForm({submit}) {
     amount: 0
 
    })
-   
+
    function handle(e){
     const newdata={...data}
     newdata[e.target.id]= e.target.value

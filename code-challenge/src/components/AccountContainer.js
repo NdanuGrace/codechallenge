@@ -24,7 +24,7 @@ setTransactions(dataArray);
     <div>
       <Search />
       <AddTransactionForm submit={submitData}/>
-      <TransactionsList  transactions={ infoTransaction}/>
+      <TransactionsList transactions={ infoTransaction}/>
     </div>
   );
 }
