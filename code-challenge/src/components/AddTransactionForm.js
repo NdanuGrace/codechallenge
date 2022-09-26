@@ -1,9 +1,14 @@
 import React ,{useState}from "react";
 
 
-function AddTransactionForm() {
+function AddTransactionForm({submit}) {
 
-   const[submittedData, setSubmittedData] = useState([])
+   const[submittedData, setSubmittedData] = useState({
+    date:"",
+    description: "",
+    category:"",
+    amount: 0
+})
    const[data, setData] = useState ({
     date: "",
     description: "",
@@ -11,6 +16,13 @@ function AddTransactionForm() {
     amount: 0
 
    })
+   
+   function handle(e){
+    const newdata={...data}
+    newdata[e.target.id]= e.target.value
+    setData(newdata)
+console.log(newdata)
+  }
 
 function handleSubmit(e){
   e.preventDefault();
@@ -21,28 +33,14 @@ function handleSubmit(e){
   amount: data.amount
 
 }
-const dataArray=[...submittedData, formData];
-setSubmittedData(dataArray);
-setData("");
-
+submit(formData)
     
 }
 
-const listOfSubmissions= submittedData.map((prop, index)=> {
-  return(
-    <div key={index}>
-      {prop.data}
-    </div>
-  )
-})
 
 
-   function handle(e){
-     const newdata={...data}
-     newdata[e.target.id]= e.target.value
-     setData(newdata)
-console.log(newdata)
-   }
+
+ 
   return (
     <div className="ui segment">
       <form onSubmit ={(e) => handleSubmit(e)} className="ui form">
@@ -57,7 +55,7 @@ console.log(newdata)
         </button>
       </form>
      
-     {listOfSubmissions}
+    
     </div>
   );
 }
