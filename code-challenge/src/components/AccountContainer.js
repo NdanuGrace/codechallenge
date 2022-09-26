@@ -5,6 +5,7 @@ import AddTransactionForm from "./AddTransactionForm";
 
 function AccountContainer() {
   const[infoTransaction, setTransactions] = useState([])
+  const [searchItem, setSearchItem] = useState("")
 
   useEffect(() =>{
     fetch(" http://localhost:8001/transactions")
@@ -22,7 +23,8 @@ setTransactions(dataArray);
 }
   return (
     <div>
-      <Search />
+      
+      <Search search={searchItem} onSearchChange={setSearchItem}/>
       <AddTransactionForm submit={submitData}/>
       <TransactionsList transactions={ infoTransaction}/>
     </div>

@@ -3,12 +3,7 @@ import React ,{useState}from "react";
 
 function AddTransactionForm({submit}) {
 
-//    const[submittedData, setSubmittedData] = useState({
-//     date:"",
-//     description: "",
-//     category:"",
-//     amount: 0
-// })
+
    const[data, setData] = useState ({
     date: "",
     description: "",
