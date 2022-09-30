@@ -1,7 +1,7 @@
-import React from "react";
+import React,{useState} from "react";
 
 function AddTransactionForm({ handleAddTransaction }) {
-	const [formData, setFormData] = React.useState({
+	const [formData, setFormData] = useState({
 		date: "",
 		description: "",
 		category: "",
@@ -11,7 +11,7 @@ function AddTransactionForm({ handleAddTransaction }) {
 		e.preventDefault();
 		console.log(formData);
 		try {
-			const res = await fetch("http://localhost:8001/transactions", {
+			const res =  fetch("http://localhost:8001/transactions", {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",
@@ -38,6 +38,8 @@ function AddTransactionForm({ handleAddTransaction }) {
 	const handleChange = (e) => {
 		setFormData({ ...formData, [e.target.name]: e.target.value });
 	};
+
+
 	return (
 		<div className="ui segment">
 			<form className="ui form" onSubmit={handlePostTransaction}>

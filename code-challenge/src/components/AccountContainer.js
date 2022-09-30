@@ -7,7 +7,7 @@ function AccountContainer({
 	transactions,
 	handleAddTransaction,
 	handleSearch,
-	handleDeleteTransaction,
+
 }) {
 	return (
 		<div>
@@ -18,7 +18,6 @@ function AccountContainer({
 			/>
 			<TransactionsList
 				transactions={transactions}
-				handleDeleteTransaction={handleDeleteTransaction}
 			/>
 		</div>
 	);

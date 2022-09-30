@@ -90,6 +90,13 @@
       "category": "m ",
       "amount": "788",
       "id": 13
+    },
+    {
+      "date": "2022-09-23",
+      "description": "",
+      "category": "",
+      "amount": null,
+      "id": 14
     }
   ]
 }

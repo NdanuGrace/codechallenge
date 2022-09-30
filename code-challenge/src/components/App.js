@@ -1,16 +1,16 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
 import AccountContainer from "./AccountContainer";
 
 function App() {
-	const [transactions, setTransactions] = React.useState([]);
+	const [transactions, setTransactions] = useState([]);
 
-	React.useEffect(() => {
+	useEffect(() => {
 		fetchTransactions();
 	}, []);
 
 	const fetchTransactions = async () => {
 		try {
-			const res = await fetch("http://localhost:8001/transactions");
+			const res =  fetch("http://localhost:8001/transactions");
 			const jsonRes = await res.json();
 			setTransactions(jsonRes);
 		} catch (error) {
@@ -53,7 +53,7 @@ function App() {
 				handleDeleteTransaction={handleDeleteTransaction}
 			/>
 		</div>
-		// <div>ddd</div>
+	
 	);
 }
 
