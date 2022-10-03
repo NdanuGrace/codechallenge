@@ -10,7 +10,7 @@ function App() {
 
 	const fetchTransactions = async () => {
 		try {
-			const res =  fetch("http://localhost:8001/transactions");
+			const res = await fetch("http://localhost:8001/transactions");
 			const jsonRes = await res.json();
 			setTransactions(jsonRes);
 		} catch (error) {

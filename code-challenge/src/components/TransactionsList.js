@@ -19,7 +19,7 @@ function TransactionsList({ transactions }) {
 					<th>
 						<h3 className="ui center aligned header">Amount</h3>
 					</th>
-					
+					<th>Action</th>
 				</tr>
 				{/* render a list of <Transaction> components here */}
 				{transactions.map((transaction, id) => (
