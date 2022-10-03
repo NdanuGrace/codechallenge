@@ -14,7 +14,7 @@ function Transaction({
 				<button onClick={() => deleteTransaction(id)}>Delete</button>
 			</td>
 		</tr>
-	);
+	)
 }
 
 export default Transaction;

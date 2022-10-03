@@ -32,7 +32,7 @@ function AddTransactionForm({ handleAddTransaction }) {
 				amount: null,
 			});
 		} catch (err) {
-			console.log(err);
+			console.log(error);
 		}
 	};
 	const handleChange = (e) => {

@@ -20,7 +20,7 @@ function AccountContainer({
 				transactions={transactions}
 			/>
 		</div>
-	);
+	)
 }
 
 export default AccountContainer;
